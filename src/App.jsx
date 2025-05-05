@@ -1,16 +1,20 @@
-import './App.css'
-import { Button } from "@/components/ui/button"
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
-
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-svh">
-        <Button>Click me</Button>
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <main className="container mx-auto py-8 px-4">
+          {/* Your main content goes here */}
+          <h1 className="text-3xl font-bold text-center">
+            MyFeedback for business
+          </h1>
+        </main>
       </div>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

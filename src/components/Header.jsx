@@ -19,7 +19,7 @@ function App() {
           className="w-32 outline-none bg-transparent text-gray-700 px-2"
         />
         <button className="ml-2 hover:cursor-pointer">
-          <img src="images/Header/search.png" alt="search" className="h-6 w-6" />
+          <img src="images/Header/search.png" alt="search" className="h-8 w-8" />
         </button>
       </div>
 

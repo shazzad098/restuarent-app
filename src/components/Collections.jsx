@@ -17,7 +17,7 @@ const collections = [
 
 const Collections = () => {
     return (
-        <div className="w-full flex justify-center items-center gap-10 py-6 bg-white border-b">
+        <div className="w-screen flex justify-center items-center gap-10 py-6 bg-white border-b">
             {collections.map((item) => (
                 <div key={item.label} className="flex flex-col items-center cursor-pointer">
                     <img

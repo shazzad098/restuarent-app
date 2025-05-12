@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import StarRating from './StarRating';
 import Header from './Header';
 import Footer from './Footer';
+import ImageCarouselModal from './ImageCarouselModal';
 
 import heroBgImage from '../images/ViewRestuarants/bg.png';
 
@@ -107,6 +108,21 @@ const RestaurantDetailPage = () => {
     const { restaurantSlug } = useParams();
     const [restaurant, setRestaurant] = useState(placeholderRestaurantData);
     const [visibleReviews, setVisibleReviews] = useState(3);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [initialModalImageIndex, setInitialModalImageIndex] = useState(0);
+
+    const handleShowMoreReviews = () => {
+        setVisibleReviews(prev => prev + 3);
+    };
+
+    const openImageModal = (startIndex = 0) => {
+        setInitialModalImageIndex(startIndex);
+        setIsModalOpen(true);
+    };
+
+    const closeImageModal = () => {
+        setIsModalOpen(false);
+    };
 
     if (!restaurant) {
         return (
@@ -117,10 +133,6 @@ const RestaurantDetailPage = () => {
             </>
         );
     }
-
-    const handleShowMoreReviews = () => {
-        setVisibleReviews(prev => prev + 3);
-    };
 
     return (
         <div className="bg-gray-50 min-h-screen flex flex-col">
@@ -165,19 +177,20 @@ const RestaurantDetailPage = () => {
                     <section className="mb-12 md:mb-16">
                         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Discover our magnificent place in photos</h2>
                         <p className="text-gray-600 text-sm mb-6 max-w-2xl">The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout. The lorem ipsum is, in printing.</p>
-
-                        {restaurant.gallery && restaurant.gallery.length >= 5 ? (
+                        
+                        {restaurant.gallery && restaurant.gallery.length >= 1 ? (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4 h-[30rem] md:h-[32rem]">
                                 {/* Main Large Image */}
-                                <div className="lg:col-span-3 md:col-span-1 col-span-1 rounded-xl overflow-hidden relative shadow-lg group h-full">
-                                    <img
-                                        src={restaurant.gallery[0]}
-                                        alt="Main restaurant highlight"
-                                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 hover:cursor-pointer"
+                                <div className="lg:col-span-3 md:col-span-1 col-span-1 rounded-xl overflow-hidden relative shadow-lg group h-full cursor-pointer" onClick={() => openImageModal(0)}>
+                                    <img 
+                                        src={restaurant.gallery[0]} 
+                                        alt="Main restaurant highlight" 
+                                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                                     />
-                                    <Button
+                                    <Button 
                                         variant="secondary"
-                                        className="absolute bottom-4 left-4 bg-opacity-60 bg-white text-black px-3 py-1.5 rounded-full h-auto border border-white hover:cursor-pointer"
+                                        onClick={(e) => { e.stopPropagation(); openImageModal(0); }}
+                                        className="absolute bottom-4 left-4 bg-white hover:bg-opacity-80 text-black px-3 py-1.5 rounded-full h-auto hover:cursor-pointer"
                                     >
                                         {/* 6 dots icon */}
                                         <img src={dotsIcon} alt="Dots" className="w-4 h-4 mr-1.5" />
@@ -188,11 +201,15 @@ const RestaurantDetailPage = () => {
                                 {/* Four Smaller Images */}
                                 <div className="lg:col-span-2 md:col-span-1 col-span-1 grid grid-cols-2 grid-rows-2 gap-3 md:gap-4 h-full">
                                     {restaurant.gallery.slice(1, 5).map((imgSrc, index) => (
-                                        <div key={`gallery-small-${index}`} className="rounded-xl overflow-hidden shadow-lg group h-full">
-                                            <img
-                                                src={imgSrc}
-                                                alt={`Restaurant view ${index + 2}`}
-                                                className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 hover:cursor-pointer"
+                                        <div 
+                                            key={`gallery-small-${index}`} 
+                                            className="rounded-xl overflow-hidden shadow-lg group h-full cursor-pointer"
+                                            onClick={() => openImageModal(index + 1)}
+                                        >
+                                            <img 
+                                                src={imgSrc} 
+                                                alt={`Restaurant view ${index + 2}`} 
+                                                className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                                             />
                                         </div>
                                     ))}
@@ -323,6 +340,15 @@ const RestaurantDetailPage = () => {
                 </div>
             </main>
 
+            <Footer />
+
+            {/* Render the Modal */}
+            <ImageCarouselModal
+                isOpen={isModalOpen}
+                onClose={closeImageModal}
+                images={restaurant.gallery}
+                initialIndex={initialModalImageIndex}
+            />
         </div>
     );
 };

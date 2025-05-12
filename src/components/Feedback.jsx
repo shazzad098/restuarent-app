@@ -1,11 +1,10 @@
-// src/components/Feedback.jsx
 import React from 'react';
-import { Button } from "@/components/ui/button"; // Ensure this path is correct for your Shadcn UI setup
+import { Button } from "@/components/ui/button";
 
 const Feedback = () => {
   return (
     <section className="bg-gray-100 p-6 sm:p-8 md:p-12 lg:p-16 font-sans">
-      <div className="container mx-auto max-w-6xl"> {/* Optional: constrain width and center */}
+      <div className="container mx-auto max-w-6xl"> 
         <div className="overflow-hidden md:flex">
           {/* Left Text Section */}
           <div className="md:w-1/2 p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-center">

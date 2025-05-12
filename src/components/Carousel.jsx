@@ -8,10 +8,10 @@ import {
 } from "@/components/ui/carousel"
 
 const sliderImages = [
-    'img1.jpg',
-    'img2.jpg',
-    'img3.jpg',
-    'img4.jpg',
+    'img1.png',
+    'img2.png',
+    'img3.png',
+    'img4.png',
 ];
 
 const Carousel = () => {

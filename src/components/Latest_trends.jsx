@@ -125,10 +125,10 @@ const Latest_trends = () => {
           {trendsData.map((trend, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col group hover:cursor-pointer">
               <div className="relative">
-                <img 
-                  src={trend.image} 
-                  alt={trend.name} 
-                  className="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" 
+                <img
+                  src={trend.image}
+                  alt={trend.name}
+                  className="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                 />
                 {/* Image pagination dots */}
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5">
@@ -155,7 +155,7 @@ const Latest_trends = () => {
         </div>
         <div className="text-center mt-12">
           <p className="text-base text-gray-700 mb-4">Discover more cool restaurants</p>
-          <Button 
+          <Button
             className="bg-[#007BFF] hover:bg-[#0069D9] text-white font-semibold text-sm rounded-lg px-6 py-2.5 hover:cursor-pointer"
           >
             Show more

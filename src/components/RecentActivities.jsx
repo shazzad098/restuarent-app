@@ -2,19 +2,19 @@
 import React, { useState } from 'react';
 
 // Import images for Card 1
-import card1Img1 from '../images/Recent_Activities/card1/img1.png';
-import card1Img2 from '../images/Recent_Activities/card1/img2.png';
-import card1Img3 from '../images/Recent_Activities/card1/img3.png';
+import card1Img1 from '../images/Recent_Activities/Card1/img1.png';
+import card1Img2 from '../images/Recent_Activities/Card1/img2.png';
+import card1Img3 from '../images/Recent_Activities/Card1/img3.png';
 
 // Import images for Card 2
-import card2Img1 from '../images/Recent_Activities/card2/img1.png';
-import card2Img2 from '../images/Recent_Activities/card2/img2.png';
-import card2Img3 from '../images/Recent_Activities/card2/img3.png';
+import card2Img1 from '../images/Recent_Activities/Card2/img1.png';
+import card2Img2 from '../images/Recent_Activities/Card2/img2.png';
+import card2Img3 from '../images/Recent_Activities/Card2/img3.png';
 
 // Import images for Card 3
-import card3Img1 from '../images/Recent_Activities/card3/img1.png';
-import card3Img2 from '../images/Recent_Activities/card3/img2.png';
-import card3Img3 from '../images/Recent_Activities/card3/img3.png';
+import card3Img1 from '../images/Recent_Activities/Card3/img1.png';
+import card3Img2 from '../images/Recent_Activities/Card3/img2.png';
+import card3Img3 from '../images/Recent_Activities/Card3/img3.png';
 
 // This is the base data for unique cards
 const uniqueActivitiesData = [

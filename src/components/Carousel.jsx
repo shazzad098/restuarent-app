@@ -7,7 +7,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
-// Correct paths & loading for Vite
 const sliderImagePaths = [
   '../images/slider/img1.png',
   '../images/slider/img2.png',
@@ -23,7 +22,7 @@ const sliderImages = sliderImagePaths.map((path) => ({
   reviews: 876
 }));
 
-import starIcon from "../images/star.png"; // Correct path
+import starIcon from "../images/star.png"; 
 
 const Carousel = () => {
   return (
@@ -59,7 +58,6 @@ const Carousel = () => {
           <CarouselNext className="!right-[-32px] !bg-white !text-black !shadow-md" />
         </ShadCarousel>
 
-        {/* Dots */}
         <div className="flex justify-center mt-4">
           <span className="w-2 h-2 bg-gray-300 rounded-full mx-1 inline-block"></span>
           <span className="w-2 h-2 bg-blue-500 rounded-full mx-1 inline-block"></span>

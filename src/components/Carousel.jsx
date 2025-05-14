@@ -1,3 +1,9 @@
+import sliderImg1 from '../images/slider/img1.png';
+import sliderImg2 from '../images/slider/img2.png';
+import sliderImg3 from '../images/slider/img3.png';
+import sliderImg4 from '../images/slider/img4.png';
+import starIcon from "../images/star.png";
+
 import React from 'react'
 import {
   Carousel as ShadCarousel,
@@ -7,22 +13,36 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
-const sliderImagePaths = [
-  '../images/slider/img1.png',
-  '../images/slider/img2.png',
-  '../images/slider/img3.png',
-  '../images/slider/img4.png',
+const sliderImages = [
+  {
+    img: sliderImg1,
+    name: "Bottega",
+    description: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+    rating: 5.0,
+    reviews: 876
+  },
+  {
+    img: sliderImg2,
+    name: "Bottega",
+    description: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+    rating: 5.0,
+    reviews: 876
+  },
+  {
+    img: sliderImg3,
+    name: "Bottega",
+    description: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+    rating: 5.0,
+    reviews: 876
+  },
+  {
+    img: sliderImg4,
+    name: "Bottega",
+    description: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+    rating: 5.0,
+    reviews: 876
+  }
 ];
-
-const sliderImages = sliderImagePaths.map((path) => ({
-  img: new URL(path, import.meta.url).href,
-  name: "Bottega",
-  description: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
-  rating: 5.0,
-  reviews: 876
-}));
-
-import starIcon from "../images/star.png"; 
 
 const Carousel = () => {
   return (
